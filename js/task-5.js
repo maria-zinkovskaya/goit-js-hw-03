@@ -8,11 +8,16 @@ const products = [
 console.table(products);
 
 const getAllPropValues = function(arr, prop) {
-  const properties = [];
-  for (const product of products) {
-    properties.push(product.name);
+  const items = [];
+
+  for (let i = 0; i < arr.length; i += 1) {
+    const product = arr[i];
+    if (product[prop] === undefined) {
+      break;
+    }
+    items.push(product[prop]);
   }
-  return properties;
+  return items;
 };
 
 /*
