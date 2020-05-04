@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 const products = [
   { name: 'Радар', price: 1300, quantity: 4 },
   { name: 'Сканер', price: 2700, quantity: 3 },
@@ -10,8 +11,7 @@ console.table(products);
 const getAllPropValues = function(arr, prop) {
   const items = [];
 
-  for (let i = 0; i < arr.length; i += 1) {
-    const product = arr[i];
+  for (const product of arr) {
     if (product[prop] === undefined) {
       break;
     }
